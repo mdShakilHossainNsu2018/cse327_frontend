@@ -1,4 +1,6 @@
-# cse327_front_end
+# cse327_frontend
+
+Vue js, vuetify
 
 ## Project setup
 ```
