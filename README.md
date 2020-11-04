@@ -1,5 +1,7 @@
 # cse327_frontend
 
+Vue js, vuetify
+
 ## Project setup
 ```
 npm install
