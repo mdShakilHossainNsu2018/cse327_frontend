@@ -1,4 +1,4 @@
-# cse327_front_end
+# cse327_frontend
 
 ## Project setup
 ```
