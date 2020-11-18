@@ -1,12 +1,28 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="inspire">
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+    >
+      <!--  -->
+    </v-navigation-drawer>
+
+    <v-app-bar app>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <v-toolbar-title>Class Room</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn flat>Login</v-btn>
+      <v-btn flat>User</v-btn>
+      <v-btn flat>Logout</v-btn>
+    </v-app-bar>
+
+    <v-main>
+      
+    </v-main>
+  </v-app>
 </template>
+
 
 <style lang="scss">
 #app {
