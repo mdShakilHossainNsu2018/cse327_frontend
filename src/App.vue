@@ -12,13 +12,13 @@
 
       <v-toolbar-title>Class Room</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat>Login</v-btn>
-      <v-btn flat>User</v-btn>
-      <v-btn flat>Logout</v-btn>
+      <v-btn>Login</v-btn>
+      <v-btn>User</v-btn>
+      <v-btn>Logout</v-btn>
     </v-app-bar>
 
     <v-main>
-      
+      <router-view/>
     </v-main>
   </v-app>
 </template>
@@ -46,3 +46,21 @@
   }
 }
 </style>
+
+
+<script>
+// import router from './router'
+
+  export default{
+    data(){
+      return {
+        drawer: false,
+        isAuthenticated: false
+      }
+    },
+    mounted(){
+
+
+    }
+  }
+</script>
