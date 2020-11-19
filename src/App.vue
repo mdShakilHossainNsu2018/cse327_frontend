@@ -10,11 +10,11 @@
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Class Room</v-toolbar-title>
+      <v-toolbar-title>Class Room </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn>Login</v-btn>
       <v-btn>User</v-btn>
-      <v-btn>Logout</v-btn>
+      <v-btn @click="logout">Logout</v-btn>
     </v-app-bar>
 
     <v-main>
@@ -50,6 +50,7 @@
 
 <script>
 // import router from './router'
+import { mapActions } from 'vuex'
 
   export default{
     data(){
@@ -58,8 +59,13 @@
         isAuthenticated: false
       }
     },
+
+    methods: {
+      ...mapActions("user",['logout', 'init'])
+    },
     mounted(){
 
+      this.init()
 
     }
   }

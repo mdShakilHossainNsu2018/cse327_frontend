@@ -15,9 +15,10 @@
                 ></v-text-field>
 
                 <v-text-field
-                        v-model="email"
-                        :rules="emailRules"
-                        label="E-mail"
+                        v-model="password"
+                        :rules="passwordRules"
+                        label="password"
+                        type="password"
                         required
                 ></v-text-field>
 
@@ -52,19 +53,12 @@
                 v => !!v || 'Name is required',
                 v => (v && v.length <= 10) || 'Name must be less than 10 characters',
             ],
-            email: '',
-            emailRules: [
+            password: '',
+            passwordRules: [
                 v => !!v || 'E-mail is required',
-                v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+
             ],
-            select: null,
-            items: [
-                'Item 1',
-                'Item 2',
-                'Item 3',
-                'Item 4',
-            ],
-            checkbox: false,
+
         }),
 
         methods: {
@@ -72,8 +66,9 @@
                 this.$refs.form.validate()
             },
             login () {
-                this.$refs.form.reset()
-            },
+                var data = {username: this.userName, password: this.password}
+                this.$store.dispatch('user/login', data)
+                },
             registration () {
                 this.$refs.form.resetValidation()
             },
