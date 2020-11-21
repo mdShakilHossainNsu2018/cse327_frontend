@@ -32,7 +32,7 @@
 
                 <v-btn
                         color="warning"
-                        @click="registration"
+                        to="/register"
                 >
                     Registration
                 </v-btn>
@@ -69,9 +69,7 @@
                 var data = {username: this.userName, password: this.password}
                 this.$store.dispatch('user/login', data)
                 },
-            registration () {
-                this.$refs.form.resetValidation()
-            },
+
         },
     }
 </script>
