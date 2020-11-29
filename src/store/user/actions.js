@@ -21,6 +21,20 @@ export const login = ({commit}, data) => {
 
 }
 
+
+export const register = ({dispatch}, data) => {
+    axiosLocal.post('users/users/', data).then(res => {
+        var data2 = {
+            username: res.data.username,
+            password: data.password,
+        }
+        dispatch('login', data2)
+    }).catch(err => {
+        console.log(err)
+    })
+}
+
+
 export const logout = ({commit}) => {
     localStorage.removeItem('user')
     commit('LOG_OUT')
